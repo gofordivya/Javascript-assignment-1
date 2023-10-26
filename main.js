@@ -14,7 +14,12 @@ contact.addEventListener("submit", onSubmit);
 function onSubmit(e) {
   e.preventDefault();
 
-  if (firstNameInput.value === "" || emailInput.value === "") {
+  if (
+    firstNameInput.value === "" ||
+    lasttNameInput.value === "" ||
+    emailInput.value === "" ||
+    messageInput.value === ""
+  ) {
     msg.classList.add("error");
     msg.innerHTML = "Please enter all fields";
     setTimeout(() => msg.remove(), 3000);
@@ -48,8 +53,8 @@ var skills = [
 ];
 
 var skillList = document.getElementById("skillList");
-// Function to add skills with animation
-function addSkillsWithAnimation() {
+// Function to add skills
+function addSkills() {
   for (var i = 0; i < skills.length; i++) {
     var skill = skills[i];
     var listItem = document.createElement("li");
@@ -58,7 +63,7 @@ function addSkillsWithAnimation() {
   }
 }
 
-// Add skills with animation when the page loads
-addSkillsWithAnimation();
+// Add skills  when the page loads
+addSkills();
 
 function add() {}
