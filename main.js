@@ -51,18 +51,10 @@ var skillList = document.getElementById("skillList");
 // Function to add skills with animation
 function addSkillsWithAnimation() {
   for (var i = 0; i < skills.length; i++) {
-    (function (i) {
-      setTimeout(function () {
-        var skill = skills[i];
-        var listItem = document.createElement("li");
-        listItem.textContent = skill;
-        listItem.style.opacity = "0";
-        skillList.appendChild(listItem);
-        setTimeout(function () {
-          listItem.style.opacity = "1";
-        }, 300 * i);
-      }, 300 * i);
-    })(i);
+    var skill = skills[i];
+    var listItem = document.createElement("li");
+    listItem.textContent = skill;
+    skillList.appendChild(listItem);
   }
 }
 
